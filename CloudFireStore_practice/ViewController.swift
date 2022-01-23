@@ -19,6 +19,7 @@ final class ViewController: UIViewController {
   }
   @IBOutlet private weak var textField: UITextField!
   private let db = Firestore.firestore()
+  private var items = [String: Any]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,7 +28,7 @@ final class ViewController: UIViewController {
   @IBAction func didTapAddButton(_ sender: Any) {
     guard let text = textField.text, !text.isEmpty else { return }
     textField.text = ""
-    db.collection("post").addDocument(data: ["text": text]) { error in
+    db.collection("posts").addDocument(data: ["text": text]) { error in
       if let error = error {
         print("Error adding document: \(error)")
       }
@@ -35,7 +36,16 @@ final class ViewController: UIViewController {
   }
 
   @IBAction func didTapUpdateButton(_ sender: Any) {
-
+    db.collection("posts").getDocuments() { (querySnapshot, error) in
+      if let error = error {
+        print("Error getting documents: \(error)")
+      } else {
+        for document in querySnapshot!.documents {
+          print("\(document.documentID) => \(document.data())")
+          
+        }
+      }
+    }
     tableView.reloadData()
   }
 }
