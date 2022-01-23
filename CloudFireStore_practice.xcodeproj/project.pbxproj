@@ -17,7 +17,6 @@
 		F38C6C7927985CEA00E8609D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F38C6C7827985CEA00E8609D /* FirebaseAuth */; };
 		F38C6C7B27985CEA00E8609D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F38C6C7A27985CEA00E8609D /* FirebaseFirestore */; };
 		F38C6C7D27985CEA00E8609D /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F38C6C7C27985CEA00E8609D /* FirebaseFirestoreSwift-Beta */; };
-		F38C6C7F27985D2F00E8609D /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C6C7E27985D2F00E8609D /* PersonModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +29,6 @@
 		F38C6C682797D5DB00E8609D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F38C6C6A2797D5DB00E8609D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F38C6C702797EFE000E8609D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F38C6C7E27985D2F00E8609D /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,6 @@
 			children = (
 				F38C6C5C2797D5DA00E8609D /* AppDelegate.swift */,
 				F38C6C5E2797D5DA00E8609D /* SceneDelegate.swift */,
-				F38C6C7E27985D2F00E8609D /* PersonModel.swift */,
 				F38C6C602797D5DA00E8609D /* ViewController.swift */,
 				F38C6C622797D5DA00E8609D /* Main.storyboard */,
 				F38C6C652797D5DB00E8609D /* Assets.xcassets */,
@@ -162,7 +159,6 @@
 				F38C6C612797D5DA00E8609D /* ViewController.swift in Sources */,
 				F38C6C5D2797D5DA00E8609D /* AppDelegate.swift in Sources */,
 				F38C6C5F2797D5DA00E8609D /* SceneDelegate.swift in Sources */,
-				F38C6C7F27985D2F00E8609D /* PersonModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
