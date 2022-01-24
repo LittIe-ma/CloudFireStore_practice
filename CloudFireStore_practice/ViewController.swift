@@ -19,6 +19,7 @@ final class ViewController: UIViewController {
   }
   @IBOutlet private weak var textField: UITextField!
   private let db = Firestore.firestore()
+  private var listener: ListenerRegistration?
   private var items: [String] = []
 
   override func viewDidLoad() {
@@ -49,6 +50,30 @@ final class ViewController: UIViewController {
       }
     }
     tableView.reloadData()
+  }
+
+  @IBAction func didChangeRealTimeQueryState(_ sender: UISwitch) {
+    if sender.isOn {
+      print("Realtime update On")
+      listener = db.collection("posts").addSnapshotListener { (documentSnapshot, error) in
+        if let error = error {
+          print("Error getting documents: \(error)")
+        } else {
+          self.items = []
+          for document in documentSnapshot!.documents {
+            let data = document.data()
+            guard let text = data["text"] as? String else { return }
+            self.items.append(text)
+            DispatchQueue.main.async {
+              self.tableView.reloadData()
+            }
+          }
+        }
+      }
+    } else {
+      print("Realtime update Off")
+      listener?.remove()
+    }
   }
 }
 
